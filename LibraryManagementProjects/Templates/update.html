@@ -1,0 +1,36 @@
+{% extends 'navbar.html' %}
+ {% block content %}
+    {% load static %}
+    {% load static %}<link href="{% static 'css/update.css'%}" rel="stylesheet">
+    <div class="table">
+        <form method="post">
+        <h2 align="center" class="login"> UPDATE PAGE</h2>
+        {% csrf_token %}
+        <table align="center">
+            <div class="textbox">
+                <tr>
+                    <td>BOOK NAME:</td><td><input type="text" name="txtbook" class="input-fielid" value="{{bdata.book_name}}"></td>
+                </tr>
+                <tr>
+                    <td>AUTHOR NAME:</td><td><input type="text" name="txtauthor" class="input-fielid" value="{{bdata.author_name}}"></td>
+                </tr>
+                <tr>
+                    <td>Course:</td>
+                    <td><select name="ddlcourse" class="input-fielid">
+                    <option selected>{{ bdata.course_id}}</option>
+                        {% for i in course_data %}
+                            <option>{{ i.course_name }}</option>
+                        {% endfor %}
+
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                <td></td><td><input type="submit" value="submit" class="submit-btn"></td>
+                </tr>
+            </div>
+        </table>
+    </form>
+    </div>
+
+{% endblock %}

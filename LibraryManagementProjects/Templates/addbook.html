@@ -1,0 +1,34 @@
+{% extends 'navbar.html' %}
+ {% block content %}
+{% load static %}
+ {% load static %}<link href="{% static 'css/addbook.css'%}" rel="stylesheet">
+<div class="table">
+    <form action="adddata" method="post">
+    <h3 align="center" class="login"> ADD BOOK</h3>
+    {% csrf_token %}
+        <div class="textbox">
+            <table align="center">
+        <tr>
+            <td>BOOK NAME</td><td><input type="text" name="txtbook" class="input-fielid"></td>
+        </tr>
+        <tr>
+            <td>AUTHOR NAME</td><td><input type="text" class="input-fielid" name="txtauthor"></td>
+        </tr>
+        <tr>
+            <td>Course:</td>
+            <td><select name="ddlcourse" class="input-fielid">
+                {% for i in course_data %}
+                    <option>{{ i.course_name }}</option>
+                {% endfor %}
+
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td><td><input type="submit" value="submit" class="submit-btn"></td>
+        </tr>
+    </table>
+        </div>
+    </form>
+</div>
+{% endblock %}
