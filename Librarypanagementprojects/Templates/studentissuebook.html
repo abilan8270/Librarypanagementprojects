@@ -1,0 +1,28 @@
+{% extends 'navbar2.html' %}
+ {% block content %}
+    {% load static %}
+    {% load static %}<link href="{% static 'css/displaybook.css'%}" rel="stylesheet">
+    <div>
+        <form>
+        <h2 align="center">Book Details</h2>
+            <table align="center" border="2" class="table">
+                <tr>
+                    <th>Id</th>
+                    <th>Student Name</th>
+                    <th>Book Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                </tr>
+                {% for i in ddata %}
+                    <tr>
+                        <td>{{ i.id }}</td>
+                        <td>{{ i.stu_name }}</td>
+                        <td>{{ i.bo_name }}</td>
+                        <td>{{ i.start_date }}</td>
+                        <td>{{ i.end_date }}</td>
+                    </tr>
+                {% endfor%}
+            </table>
+        </form>
+    </div>
+{% endblock %}

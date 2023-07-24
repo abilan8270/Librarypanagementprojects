@@ -1,0 +1,52 @@
+html{
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(#000000d7,#faf8f8);
+}
+.login{
+    color: whitesmoke;
+}
+.table{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 40px;
+    width: 400px;
+    height: 250px;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 15px 25px rgb(19, 19, 19);
+    background: rgb(248, 247, 248);
+    border-radius: 10px;
+}
+.input-group{
+    top: 100px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-fielid{
+    width: 100%;
+    padding: 5px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid rgb(14, 14, 14);
+    outline: none;
+}
+.submit-btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(rgb(255, 253, 255));
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}

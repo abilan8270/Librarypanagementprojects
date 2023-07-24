@@ -1,0 +1,43 @@
+{% extends 'navbar.html' %}
+ {% block content %}
+{% load static %}
+<link href="{% static 'css/update2.css'%}" rel="stylesheet">
+    <div class="table">
+        <form method="post">
+            <h3 align="center" class="login"> ISSUE UPDATE</h3>
+            {% csrf_token %}
+            <table align="center" class="input-group">
+                <tr>
+                    <td>STUDENT NAME:</td>
+                    <td>
+                        <input type="text" name="textname" value="{{ issdata.stu_name }}" class="input-fielid">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td> BOOK NAME:</td>
+                    <td>
+                        <select name="txtbook" class="input-fielid">
+                            <option selected>{{ issdata.bo_name}}</option>
+                            {% for i in bdata %}
+                                <option>{{ i.book_name }}</option>
+                            {% endfor %}
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>START DATE</td><td> <input type="date" name="txtsdate" class="input-fielid">
+                <input type="text" value="{{issdata.start_date}}" disabled></td>
+                </tr>
+                <tr>
+                    <td>END DATE</td><td> <input type="date" name="txtedate" class="input-fielid">
+                <input type="text" value="{{issdata.end_date}}" disabled></td>
+                </tr>
+                <tr>
+                    <td></td><td><input type="submit" value="ASSING" name="subassing" class="submit-btn"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+{% endblock %}

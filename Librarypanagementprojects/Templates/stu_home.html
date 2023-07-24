@@ -1,0 +1,10 @@
+{% extends 'navbar2.html' %}
+ {% block content %}
+{% load static %}
+<link href="{% static 'css/adminhome.css'%}" rel="stylesheet">
+    <h3 align="center" class="login"> welcome
+        {% for i in sdata %}
+            {{i.s_name}}
+        {% endfor%}
+        too  Student home page</h3>
+{% endblock %}

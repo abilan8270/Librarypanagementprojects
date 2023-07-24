@@ -1,0 +1,73 @@
+{% extends 'navbar.html' %}
+ {% block content %}
+{% load static %}
+<link href="{% static 'css/assingbook.css'%}" rel="stylesheet">
+    <h3 align="center" class="login"> welcome too  Assing book page</h3>
+        <div class="container">
+            <div class="d1">
+                <form action="assingdata" method="post">
+                    {% csrf_token %}
+                    <h3 align="center">STUDENT DETALIS </h3>
+                    <table class="input-group" align="center">
+                        <tr>
+                            <td>STUDENT SEM:</td><td><input type="number" name="txtsam" class="input-fielid"></td>
+                        </tr>
+                        <tr>
+                            <td>STUDENT COURSE:</td>
+                            <td>
+                                <select name="ddlcourse" class="input-fielid">
+                                    {% for i in course_data %}
+                                        <option>{{ i.course_name }}</option>
+                                    {% endfor %}
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td><td> <input type="submit" name="btmsum" class="submit-btn"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+                <div class="d2">
+                    <form action="assreaddata" method="post">
+                        <h3 align="center">Book Entry Detalis</h3>
+                        {% csrf_token %}
+                        <table class="input-group">
+                            <tr>
+                                <td>STUDENT NAME:</td>
+                                <td>
+                                    <select name="textname" class="input-fielid">
+                                        {% for i in stud_data %}
+                                            <option>{{ i.s_name }}</option>
+                                        {% endfor %}
+
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> BOOK NAME:</td>
+                                <td>
+                                    <select name="txtbook" class="input-fielid">
+                                        {% for i in book_data %}
+                                            <option>{{ i.book_name }}</option>
+                                        {% endfor %}
+
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>START DATE</td><td> <input type="date" name="txtsdate" class="input-fielid"></td>
+                            </tr>
+                            <tr>
+                                <td>END DATE</td><td> <input type="date" name="txtedate" class="input-fielid"></td>
+                            </tr>
+                            <tr>
+                                <td></td><td><input type="submit" value="ASSING" name="subassing" class="submit-btn"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+
+            </div>
+{% endblock %}
